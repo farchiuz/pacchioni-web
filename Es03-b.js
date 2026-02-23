@@ -1,0 +1,12 @@
+let m=2;
+let c =3;
+let yl=m*(-1)+ c;
+let y2=m*10+ C;
+let xY=0;
+let yY=c;
+let xX=-C / m;
+let yX=0;
+console.log("y quando x =-1:",y1);
+console.log("y quando x= 10:",y2);
+console.log("Intersezione asse Y:",xY, yY);
+console.log("Intersezione asse X:",xX, yX);
