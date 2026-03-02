@@ -1,7 +1,24 @@
-<script>
-const larghezza =prompt("inserire la langhezza");
-const altezza = prompt("inserisci l'altezza");
-const lunghezza = prompt("inserisci lunghezza");
-const risultato= larghezza*altezza*lunghezza;
-console.log('la dimensione della scatola è: ${risultato}`);
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es03a</title>
+</head>
+<body>
+
+    <h2 id="risultato"></h2>
+
+    <script>
+        const larghezza = Number(prompt("Inserisci la larghezza"));
+        const altezza = Number(prompt("Inserisci l'altezza"));
+        const lunghezza = Number(prompt("Inserisci la lunghezza"));
+
+        const risultato = larghezza * altezza * lunghezza;
+
+        document.getElementById("risultato").textContent =
+        "La dimensione della scatola è: " + risultato;
+    </script>
+
+</body>
+</html>
