@@ -1,5 +1,20 @@
-<script>
-let voto =7;
-let esito =(voto >= 6) ?"Promosso" : "Bocciato";
-console.log(esito);
-</script>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esito Voto</title>
+</head>
+<body>
+
+    <h2 id="risultato"></h2>
+
+    <script>
+        let voto = 7;
+        let esito = (voto >= 6) ? "Promosso" : "Bocciato";
+
+        document.getElementById("risultato").textContent =
+        "Voto: " + voto + " → Esito: " + esito;
+    </script>
+
+</body>
+</html>
