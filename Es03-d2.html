@@ -1,5 +1,26 @@
-<script>
-for (let i=0;i < 3;i++) {
-console.log("Dentro il ciclo (let):",i);
-console.log("Fuori dal ciclo (let):",i);
-</script>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ciclo Let</title>
+</head>
+<body>
+
+    <h2>Ciclo con let</h2>
+    <div id="risultato"></div>
+
+    <script>
+        let output = "";
+
+        for (let i = 0; i < 3; i++) {
+            output += "Dentro il ciclo (let): " + i + "<br>";
+        }
+
+       
+        output += "Fuori dal ciclo (let): la variabile i non esiste<br>";
+
+        document.getElementById("risultato").innerHTML = output;
+    </script>
+
+</body>
+</html>
