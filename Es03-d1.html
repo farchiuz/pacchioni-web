@@ -1,7 +1,26 @@
-<script>
-  
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ciclo Var</title>
+</head>
+<body>
 
-for (var j = 0; j < 3;j++) {
-console.log("Dentro il ciclo (var):",j);
-console.log("Fuori dal ciclo (var):",j);
-</script>
+    <h2>Ciclo con var</h2>
+    <div id="risultato"></div>
+
+    <script>
+        let output = "";
+
+        for (var j = 0; j < 3; j++) {
+            output += "Dentro il ciclo (var): " + j + "<br>";
+        }
+
+        
+        output += "Fuori dal ciclo (var): " + j + "<br>";
+
+        document.getElementById("risultato").innerHTML = output;
+    </script>
+
+</body>
+</html>
