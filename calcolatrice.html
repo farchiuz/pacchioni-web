@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Semplice Calcolatrice</title>
+</head>
+<body>
+
+<h2>Calcolatrice</h2>
+
+<form id="calcForm">
+  <label>Numero 1:</label>
+  <input type="text" id="num1"><br><br>
+
+  <label>Operazione (+ - * /):</label>
+  <input type="text" id="operazione"><br><br>
+
+  <label>Numero 2:</label>
+  <input type="text" id="num2"><br><br>
+
+  <button type="submit">Calcola</button>
+</form>
+
+<p id="risultato"></p>
+
+<script>
+document.getElementById("calcForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let n1 = parseFloat(document.getElementById("num1").value);
+  let n2 = parseFloat(document.getElementById("num2").value);
+  let op = document.getElementById("operazione").value;
+  let risultato;
+
+  if (isNaN(n1) || isNaN(n2)) {
+    document.getElementById("risultato").textContent = "Errore: inserisci numeri validi.";
+    return;
+  }
+
+  switch(op) {
+    case "+":
+      risultato = n1 + n2;
+      break;
+    case "-":
+      risultato = n1 - n2;
+      break;
+    case "*":
+      risultato = n1 * n2;
+      break;
+    case "/":
+      if (n2 === 0) {
+        document.getElementById("risultato").textContent = "Errore: divisione per zero.";
+        return;
+      }
+      risultato = n1 / n2;
+      break;
+    default:
+      document.getElementById("risultato").textContent = "Errore: operazione non valida.";
+      return;
+  }
+
+  document.getElementById("risultato").textContent = "Risultato: " + risultato;
+});
+</script>
+
+</body>
+</html>
