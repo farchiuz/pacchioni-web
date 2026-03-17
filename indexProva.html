@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizi Scolastici | Index Futuristico</title>
+    <style>
+        :root {
+            --bg: #050505;
+            --card-bg: #111111;
+            --accent: #00f2ff; /* Ciano futuristico */
+            --accent-glow: rgba(0, 242, 255, 0.3);
+            --text: #e0e0e0;
+            --font-main: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 200;
+            margin-bottom: 60px;
+            text-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* --- STILE CARTELLE --- */
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category-header {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .category-header::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--accent), transparent);
+            opacity: 0.4;
+        }
+
+        /* --- GRID E BOX --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .exercise-card {
+            background: var(--card-bg);
+            border: 1px solid #222;
+            border-radius: 15px;
+            padding: 30px;
+            text-decoration: none;
+            color: var(--text);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: block;
+        }
+
+        /* Effetto di sollevamento e bagliore al passaggio */
+        .exercise-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 15px var(--accent-glow);
+            background: #161616;
+        }
+
+        .exercise-card h3 {
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+
+        .exercise-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #777;
+            line-height: 1.4;
+        }
+
+        /* Decorazione interna futuristica */
+        .exercise-card::before {
+            content: "";
+            position: absolute;
+            top: 0; right: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, transparent 50%, #222 50%);
+            transition: all 0.4s;
+        }
+
+        .exercise-card:hover::before {
+            background: linear-gradient(135deg, transparent 50%, var(--accent) 50%);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Core_Database</h1>
+
+    <div class="container">
+        
+        <section class="category">
+            <div class="category-header">Modulo_01: Matematica</div>
+            <div class="grid">
+                <a href="LINK_ESERCIZIO_1" class="exercise-card">
+                    <h3>Equazioni di II Grado</h3>
+                    <p>Risoluzione di sistemi complessi e parabole.</p>
+                </a>
+                <a href="LINK_ESERCIZIO_2" class="exercise-card">
+                    <h3>Geometria Analitica</h3>
+                    <p>Studio della circonferenza nel piano.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="category">
+            <div class="category-header">Modulo_02: Informatica</div>
+            <div class="grid">
+                <a href="LINK_ESERCIZIO_3" class="exercise-card">
+                    <h3>Array & Cicli</h3>
+                    <p>Algoritmi di ordinamento in C++.</p>
+                </a>
+                <a href="LINK_ESERCIZIO_4" class="exercise-card">
+                    <h3>Database SQL</h3>
+                    <p>Query di selezione e join relazionali.</p>
+                </a>
+                <a href="LINK_ESERCIZIO_5" class="exercise-card">
+                    <h3>Sviluppo Web</h3>
+                    <p>Esercitazione su Flexbox e Grid CSS.</p>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Logica per aggiungere un effetto "glitch" casuale al titolo al caricamento
+        window.onload = () => {
+            const title = document.querySelector('h1');
+            console.log("Sistema caricato. Link pronti per l'inserimento.");
+        };
+    </script>
+
+</body>
+</html>
