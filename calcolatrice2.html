@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcolatrice con Metodi</title>
+</head>
+<body>
+
+<h2>Calcolatrice</h2>
+
+<input type="number" id="num1" placeholder="Primo numero"><br><br>
+<input type="number" id="num2" placeholder="Secondo numero"><br><br>
+<input type="text" id="operazione" placeholder="Operazione (+, -, *, /, **)"><br><br>
+
+<button onclick="avviaCalcolo()">Calcola</button>
+
+<p id="risultato"></p>
+
+<script>
+    
+    function leggiValori() {
+        let n1 = parseFloat(document.getElementById("num1").value);
+        let n2 = parseFloat(document.getElementById("num2").value);
+        let op = document.getElementById("operazione").value;
+        return { n1, n2, op };
+    }
+
+    
+    function inputValido(n1, n2) {
+        return !isNaN(n1) && !isNaN(n2);
+    }
+
+   
+    function calcola(n1, n2, op) {
+        switch(op) {
+            case "+": return n1 + n2;
+            case "-": return n1 - n2;
+            case "*": return n1 * n2;
+            case "/":
+                if (n2 === 0) return "Errore: divisione per zero!";
+                return n1 / n2;
+            case "**": return Math.pow(n1, n2);
+            default: return "Errore: operazione non valida!";
+        }
+    }
+
+    
+    function mostraRisultato(ris) {
+        document.getElementById("risultato").innerText = ris;
+    }
+
+    // Metodo principale
+    function avviaCalcolo() {
+        let { n1, n2, op } = leggiValori();
+
+        if (!inputValido(n1, n2)) {
+            mostraRisultato("Errore: input non valido!");
+            return;
+        }
+
+        let risultato = calcola(n1, n2, op);
+        mostraRisultato("Risultato: " + risultato);
+    }
+</script>
+
+</body>
+</html>
