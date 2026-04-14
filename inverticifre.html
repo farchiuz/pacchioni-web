@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Inverti Cifre</title>
+</head>
+<body>
+
+<h2>Inverti Cifre</h2>
+
+<input type="number" id="numero" placeholder="Inserisci un numero"><br><br>
+
+<button onclick="avvia()">Inverti</button>
+
+<p id="risultato"></p>
+
+<script>
+    // Metodo per leggere input
+    function leggiNumero() {
+        return parseInt(document.getElementById("numero").value);
+    }
+
+    // Metodo per validare input
+    function inputValido(n) {
+        return !isNaN(n);
+    }
+
+    // Metodo principale richiesto
+    function inverti_cifre(n) {
+        let invertito = 0;
+        let numero = Math.abs(n);
+
+        while (numero > 0) {
+            let cifra = numero % 10;
+            invertito = invertito * 10 + cifra;
+            numero = Math.floor(numero / 10);
+        }
+
+        // Gestione numeri negativi
+        return n < 0 ? -invertito : invertito;
+    }
+
+    // Metodo per mostrare risultato
+    function mostraRisultato(ris) {
+        document.getElementById("risultato").innerText = "Risultato: " + ris;
+    }
+
+    // Metodo coordinatore
+    function avvia() {
+        let numero = leggiNumero();
+
+        if (!inputValido(numero)) {
+            mostraRisultato("Errore: input non valido!");
+            return;
+        }
+
+        let risultato = inverti_cifre(numero);
+        mostraRisultato(risultato);
+    }
+</script>
+
+</body>
+</html>
