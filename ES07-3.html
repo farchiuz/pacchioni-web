@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 3 Cambia Stile Pulsanti</title>
+</head>
+<body>
+
+    <h1>Modificare lo stile dei pulsanti</h1>
+
+   
+    <button class="mio-pulsante">Pulsante A</button>
+    <button class="mio-pulsante">Pulsante B</button>
+    <button class="mio-pulsante">Pulsante C</button>
+
+    <br><br>
+   
+    <button onclick="cambiaStilePulsanti()">Colora i pulsanti sopra!</button>
+
+    <script>
+        function cambiaStilePulsanti() {
+            
+            let listaPulsanti = document.getElementsByClassName("mio-pulsante");
+
+            
+            for (let i = 0; i < listaPulsanti.length; i++) {
+                listaPulsanti[i].style.backgroundColor = "darkblue"; 
+                listaPulsanti[i].style.color = "white";             
+                listaPulsanti[i].style.padding = "10px 20px";        
+                listaPulsanti[i].style.border = "none";              
+            }
+        }
+    </script>
+
+</body>
+</html>
