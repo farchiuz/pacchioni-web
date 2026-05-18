@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 2  Oggetto Navigator</title>
+</head>
+<body>
+
+    <h1>Proprietà Principali dell'oggetto Navigator</h1>
+    <button onclick="mostraProprietaNavigator()">Scopri il tuo Browser</button>
+    
+    <div id="risultato" style="margin-top: 20px; font-family: sans-serif;"></div>
+
+    <script>
+        function mostraProprietaNavigator() {
+            let output = document.getElementById("risultato");
+
+            
+            let nomeBrowser = navigator.userAgent; 
+            let lingua = navigator.language;      
+            let online = navigator.onLine;        
+
+           
+            let statoConnessione = online ? "Sì, sei online" : "No, sei offline";
+
+            
+            output.innerHTML = `
+                <p><strong>Dettagli Browser (UserAgent):</strong> ${nomeBrowser}</p>
+                <p><strong>Lingua predefinita:</strong> ${lingua}</p>
+                <p><strong>Connesso a Internet?</strong> ${statoConnessione}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
