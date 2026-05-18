@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 4 Converti in Maiuscolo</title>
+</head>
+<body>
+
+    <h1>Convertitore in Maiuscolo</h1>
+
+    <label for="campoTesto">Scrivi qualcosa qui sotto:</label><br><br>
+    
+   
+    <input type="text" id="campoTesto" oninput="trasformaInMaiuscolo()" placeholder="Scrivi in minuscolo...">
+
+    <script>
+        function trasformaInMaiuscolo() {
+           
+            let input = document.getElementById("campoTesto");
+
+            
+            let testoInserito = input.value;
+
+            
+            input.value = testoInserito.toUpperCase();
+        }
+    </script>
+
+</body>
+</html>
