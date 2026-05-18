@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio 1 Oggetto Window</title>
+</head>
+<body>
+
+    <h1>Proprietà Principali dell'oggetto Window</h1>
+    <button onclick="mostraProprietaWindow()">Mostra Proprietà</button>
+    
+    
+    <div id="risultato" style="margin-top: 20px; font-family: sans-serif;"></div>
+
+    <script>
+        function mostraProprietaWindow() {
+           
+            let output = document.getElementById("risultato");
+
+           
+            let altezza = window.innerHeight; 
+            let larghezza = window.innerWidth; 
+            let urlCorrente = window.location.href; 
+
+            
+            output.innerHTML = `
+                <p><strong>Altezza della finestra:</strong> ${altezza} pixel</p>
+                <p><strong>Larghezza della finestra:</strong> ${larghezza} pixel</p>
+                <p><strong>URL della pagina:</strong> ${urlCorrente}</p>
+            `;
+        }
+    </script>
+
+</body>
+</html>
