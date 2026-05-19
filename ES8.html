@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizi JavaScript - Scuola Superiore</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .esercizio {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        .messaggio-errore {
+            color: red;
+            font-weight: bold;
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Esercizi 8</h1>
+
+    <!-- ESERCIZIO 1 -->
+    <div class="esercizio">
+        <h3>1. Cambiare colore e sfondo del pulsante al passaggio del mouse</h3>
+        
+        <button 
+            onmouseover="this.style.backgroundColor='blue'; this.style.color='white';" 
+            onmouseout="this.style.backgroundColor=''; this.style.color='';">
+            Passa il mose qui sopra
+        </button>
+    </div>
+
+    <!-- ESERCIZIO 2 -->
+    <div class="esercizio">
+        <h3>2. Convertire il testo in maiuscolo (Codice Fiscale)</h3>
+        <label for="codice_fiscale">Inserisci Codice Fiscale:</label>
+        
+        <input type="text" id="codice_fiscale" oninput="this.value = this.value.toUpperCase();">
+    </div>
+
+    <!-- ESERCIZIO 3 -->
+    <div class="esercizio">
+        <h3>3. Cambiare sfondo al Focus e al Blur</h3>
+        <label for="campo_focus">Clicca nella casella:</label>
+        
+        <input type="text" id="campo_focus" 
+            onfocus="this.style.backgroundColor='yellow';" 
+            onblur="this.style.backgroundColor='white';">
+    </div>
+
+    <!-- ESERCIZIO 4 -->
+    <div class="esercizio">
+        <h3>4. Nascondere un testo al click impostando hidden = true</h3>
+        <p id="testo_da_nascondere">Questo è il testo che scomparirà. Poof!</p>
+        <button onclick="document.getElementById('testo_da_nascondere').hidden = true;">
+            Nascondi il testo
+        </button>
+    </div>
+
+    <!-- ESERCIZI 5 e 6 -->
+    <div class="esercizio">
+        <h3>5 & 6. Requisiti Password e Controllo Ripeti Password</h3>
+        
+        <label for="password">Password (almeno 8 caratteri):</label><br>
+        <input type="password" id="password" oninput="controllaRequisitiPassword()"><br><br>
+
+        <label for="ripetipassword">Ripeti Password:</label><br>
+        <input type="password" id="ripetipassword" oninput="controllaUguaglianza()">
+        
+        <span id="errore_password" class="messaggio-errore"> Le password non coincidono!</span>
+    </div>
+
+    
+    <script>
+        
+        function controllaRequisitiPassword() {
+            let campoPassword = document.getElementById("password");
+            let passwordInserita = campoPassword.value;
+
+            if (passwordInserita.length === 0) {
+                
+                campoPassword.style.backgroundColor = "white";
+            } else if (passwordInserita.length >= 8) {
+                
+                campoPassword.style.backgroundColor = "lightgreen";
+            } else {
+                
+                campoPassword.style.backgroundColor = "lightcoral";
+            }
+
+           
+            controllaUguaglianza();
+        }
+
+        // ESERCIZIO 5: Mostra errore se ripetipassword è diverso da password
+        function controllaUguaglianza() {
+            let password = document.getElementById("password").value;
+            let ripetiPassword = document.getElementById("ripetipassword").value;
+            let messaggioErrore = document.getElementById("errore_password");
+
+           
+            if (ripetiPassword !== "" && password !== ripetiPassword) {
+                messaggioErrore.style.display = "inline"; 
+            } else {
+                messaggioErrore.style.display = "none";   
+            }
+        }
+    </script>
+
+</body>
+</html>
